@@ -65,6 +65,10 @@ async def update_user(
     db=Depends(get_db)
 ):
     service = UserService(db)
+    if update_data.role == "admin":
+        target = await service.get_user_by_id(user_id)
+        if not target or target.get("role") != "admin":
+            raise HTTPException(status_code=403, detail="禁止通过此处将用户设为管理员")
     user = await service.update_user(
         user_id,
         username=update_data.username,
