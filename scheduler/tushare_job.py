@@ -891,14 +891,14 @@ class TushareDataIntegrator:
 if __name__ == '__main__':
     # 示例使用
     db_config = {
-        'host': 'mysql-2579b2bfcbcb-public.rds.volces.com',
+        'host': 'xxxxxxxxxxxxxx',
         'port': 3306,
-        'user': 'bestismark',
-        'password': 'Aa123456',
-        'database': 'ttssreport'
+        'user': 'xxxxxxxx',
+        'password': 'xxxxxxxx',
+        'database': 'xxxxxxxxxxx'
     }
 
-    tushare_token = 'a266b71c03f7666e00c6492021a3f0e8517d7242ad446d79fb363fc9'
+    tushare_token = 'xxxxxxxxxxxx'
 
     integrator = TushareDataIntegrator(tushare_token, db_config)
 

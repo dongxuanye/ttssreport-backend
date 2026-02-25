@@ -3,16 +3,16 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    DB_HOST: str = "xxxxxxxxxxx"
+    DB_HOST: str = "127.0.0.1"
     DB_PORT: int = 3306
-    DB_USER: str = "xxxxxx"
-    DB_PASSWORD: str = "xxxxxxxxx"
-    DB_NAME: str = "xxxxxxxxxx"
+    DB_USER: str = "root"
+    DB_PASSWORD: str = "123456"
+    DB_NAME: str = "ttssreport"
     DB_CHARSET: str = "utf8mb4"
 
     TUSHARE_TOKEN: str = "xxxxxxxxxxxxxxxxx"
 
-    JWT_SECRET_KEY: str = "xxxxxxxxxxxxx"
+    JWT_SECRET_KEY: str = "konna1072"
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRE_MINUTES: int = 1440
 

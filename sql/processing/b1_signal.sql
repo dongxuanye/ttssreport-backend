@@ -47,15 +47,13 @@ CREATE TABLE IF NOT EXISTS b1_signal_results (
     
     -- 触发条件
     trigger_time TIMESTAMP COMMENT '触发时间',
-    trigger_condition VARCHAR(500) COMMENT '触发条件描述',
-    
     -- 展示要素(多标签组合)
     display_factor TEXT COMMENT '展示要素(如: J<13, MACD>0, 红肥绿瘦, 量比>1.5)',
     
     -- 匹配标签
     matched_tag_ids JSON COMMENT '匹配的标签ID列表',
     matched_tag_names JSON COMMENT '匹配的标签名称列表',
-    matched_tag_codes JSON COMMENT '匹配的标签code列表'
+    matched_tag_codes JSON COMMENT '匹配的标签code列表',
     plus_tags_count INT DEFAULT 0 COMMENT '加分项数量',
     minus_tags_count INT DEFAULT 0 COMMENT '减分项数量',
     tag_score INT DEFAULT 0 COMMENT '标签得分(加分项-减分项)',

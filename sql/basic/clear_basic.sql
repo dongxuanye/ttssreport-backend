@@ -73,8 +73,6 @@ CREATE TABLE IF NOT EXISTS bak_daily_data (
 -- 注意：open/close/high/low/change为MySQL关键字，使用反引号转义
 -- ==========================================
 
-USE ttssreport;
-
 DROP TABLE IF EXISTS stk_factor_pro_data;
 
 CREATE TABLE IF NOT EXISTS stk_factor_pro_data (
@@ -450,3 +448,17 @@ CREATE TABLE IF NOT EXISTS stock_list (
     KEY idx_ts_code (ts_code),
     KEY idx_is_active (is_active)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='股票代码列表表';
+
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE IF NOT EXISTS user (
+    id INT AUTO_INCREMENT PRIMARY KEY COMMENT '主键ID',
+    username varchar(64) NOT NULL COMMENT '用户名',
+    phone varchar(64) NOT NULL COMMENT '手机号',
+    role varchar(16) NOT NULL COMMENT 'comm-普通用户、vip-vip用户、admin-管理员',
+    status TINYINT DEFAULT 1 COMMENT '1-激活,0-注销',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    KEY idx_status (status),
+    KEY idx_role (role)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户表';

@@ -8,7 +8,7 @@ class User(BaseModel):
     wechat_openid: Optional[str] = None
     username: Optional[str] = None
     role: str = 'comm'
-    status: str = 'active'
+    status: Optional[int] = 1
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
